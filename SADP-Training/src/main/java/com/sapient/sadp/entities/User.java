@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.sapient.sadp.enums.UserRole;
-
 @Entity
 @Table(name="USER")
 public class User {
