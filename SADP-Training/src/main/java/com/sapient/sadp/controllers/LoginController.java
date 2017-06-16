@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sapient.sadp.entities.User;
+import com.sapient.sadp.enums.ValidationResult;
 import com.sapient.sadp.service.LoginService;
 
 @RestController
@@ -16,9 +16,9 @@ public class LoginController {
 	LoginService loginService;
 	
 	@RequestMapping(value="/validateLogin", method=RequestMethod.POST)
-	public void addUser(@RequestBody String userName
+	public ValidationResult addUser(@RequestBody String userName
 			,@RequestBody String password){
-		loginService.validate(userName,password);
+		return loginService.validate(userName,password);
 	}
 
 }

@@ -15,8 +15,6 @@ public class User {
 	private String userName;
 	private String userEmail;
 	private String password;
-	private long mobileNumber;
-	private UserRole userRole;
 	
 	public long getUserId() {
 		return userId;
@@ -42,19 +40,5 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public long getMobileNumber() {
-		return mobileNumber;
-	}
-	public void setMobileNumber(long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
-	public UserRole getUserRole() {
-		return userRole;
-	}
-	public void setUserRole(UserRole userRole) {
-		this.userRole = userRole;
-	}
-	
-	
 	
 }

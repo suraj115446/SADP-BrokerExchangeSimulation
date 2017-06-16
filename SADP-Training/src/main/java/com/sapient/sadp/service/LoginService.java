@@ -1,7 +1,9 @@
 package com.sapient.sadp.service;
 
+import com.sapient.sadp.enums.ValidationResult;
+
 public interface LoginService {
 
-	void validate(String userName, String password);
+	ValidationResult validate(String userName, String password);
 
 }
