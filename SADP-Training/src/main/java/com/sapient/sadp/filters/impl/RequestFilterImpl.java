@@ -1,5 +1,7 @@
 package com.sapient.sadp.filters.impl;
 
-public class RequestFilterImpl {
+import com.sapient.sadp.filters.RequestFilter;
+
+public class RequestFilterImpl implements RequestFilter{
 
 }

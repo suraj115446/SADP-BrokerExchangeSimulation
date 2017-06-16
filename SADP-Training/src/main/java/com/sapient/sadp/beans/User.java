@@ -1,5 +1,7 @@
 package com.sapient.sadp.beans;
 
+import com.sapient.sadp.enums.UserRole;
+
 public final class User {
 	
 	private final long userId;
@@ -7,32 +9,41 @@ public final class User {
 	private final String userEmail;
 	private final String password;
 	private final long mobileNumber;
+	private final UserRole userRole;
 	
-	
-	
-	public User(long userId, String userName, String userEmail, String password, long mobileNumber) {
+	public User(long userId, String userName, String userEmail, String password, long mobileNumber, UserRole userRole) {
 		this.userId = userId;
 		this.userName = userName;
 		this.userEmail = userEmail;
 		this.password = password;
 		this.mobileNumber = mobileNumber;
+		this.userRole = userRole;
 	}
+
 	public long getUserId() {
 		return userId;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public String getUserEmail() {
 		return userEmail;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public long getMobileNumber() {
 		return mobileNumber;
 	}
-	
+
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,9 +53,10 @@ public final class User {
 		result = prime * result + ((userEmail == null) ? 0 : userEmail.hashCode());
 		result = prime * result + (int) (userId ^ (userId >>> 32));
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result + ((userRole == null) ? 0 : userRole.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -73,16 +85,15 @@ public final class User {
 				return false;
 		} else if (!userName.equals(other.userName))
 			return false;
+		if (userRole != other.userRole)
+			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", userEmail=" + userEmail + ", password="
-				+ password + ", mobileNumber=" + mobileNumber + "]";
+				+ password + ", mobileNumber=" + mobileNumber + ", userRole=" + userRole + "]";
 	}
-	
-	
-	
 
 }
